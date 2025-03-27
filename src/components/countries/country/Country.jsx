@@ -16,8 +16,8 @@ const Country = ({ country, handleVisitedCountries, handleVisitedFlags}) => {
   };
   return (
     <div className={`country ${visited && "country-visited"}`}>
-      <h3>Name: {country.name.common}</h3>
-      <img src={country.flags.png} alt="img loading" />
+      <img style={{width: '360px', height: '200px'}} src={country.flags.png} alt="img loading" />
+      <h3>{country.name.common}</h3>
       <p>
         Freedom Status:{" "}
         {country.independent ? "Independent" : "Not Independent"}
