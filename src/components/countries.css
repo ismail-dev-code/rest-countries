@@ -3,3 +3,16 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+.country-visited{
+  background-color: rgba(127, 255, 212, 0.171);
+}
+.btn-visited{
+  background-color: green;
+  border: none;
+  color: white;
+}
+.btn-not-visited{
+  background-color: gray;
+  border: none;
+  
+}
