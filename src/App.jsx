@@ -7,7 +7,7 @@ const countriesPromise = fetch('https://restcountries.com/v3.1/all').then(res=>r
 function App() {
   return (
     <>
-      <Suspense fallback={ <h3>nadir on the way...</h3>
+      <Suspense fallback={ <h3>all info on the way...</h3>
       }>
       <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense>

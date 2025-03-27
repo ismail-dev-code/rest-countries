@@ -4,11 +4,16 @@ import "../countries.css";
 
 const Countries = ({ countriesPromise }) => {
   const [visitedCountries, setVisitedCountries] = useState([]);
+  const [visitedFlags, setVisitedFlags] = useState([]);
 
   const countries = use(countriesPromise);
+  const handleVisitedFlags = (flag) => {
+    const newVisitedFlags = [...visitedFlags, flag];
+    setVisitedFlags(newVisitedFlags);
+  };
 
   const handleVisitedCountries = (country) => {
-    console.log("country visited to be added hoice", country);
+    // console.log("country visited to be added hoice", country);
     const newVisitedCountries = [...visitedCountries, country];
     setVisitedCountries(newVisitedCountries);
   };
@@ -19,16 +24,22 @@ const Countries = ({ countriesPromise }) => {
         <small>Total Countries:</small> {countries.length}
       </h1>
       <h3>Traveled so far: {visitedCountries.length}</h3>
-      <ol>
+      <div className="visited-flags-container">
         {
-          visitedCountries.map(country=> <li>{country.name.common}</li>)
+          visitedFlags.map((flag, index)=> <img key={index} src={flag}></img> )
         }
+      </div>
+      <ol className="text-ol">
+        {visitedCountries.map((country) => (
+          <li key={country.cca3}>{country.name.common}</li>
+        ))}
       </ol>
       <div className="countries">
         {countries.map((country) => (
           <Country
             key={country.cca3}
             handleVisitedCountries={handleVisitedCountries}
+            handleVisitedFlags={handleVisitedFlags}
             country={country}
           ></Country>
         ))}

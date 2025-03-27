@@ -16,3 +16,16 @@
   border: none;
   
 }
+.visited-flags-container img{
+width: 150px;
+height: 100px;
+
+}
+.visited-flags-container{
+  display: flex;
+  gap: 20px;
+
+}
+.text-ol{
+  text-align: left;
+}
